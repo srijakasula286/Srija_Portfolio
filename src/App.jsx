@@ -2,9 +2,10 @@
 import './App.css';
 import { SiGithub, SiLeetcode } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa';
-
+import React from "react";
 // NAVBAR
-function Navbar() {
+
+function Navbar({ theme, onToggleTheme }) {
   return (
     <nav className="navbar">
       <a href="#home" className="brand">
@@ -25,12 +26,24 @@ function Navbar() {
         <a href="#contact">Contact</a>
       </div>
 
-      <a href="/Srija_Resume.pdf" className="resume-btn" download>
-        ↓ Resume
-      </a>
+      <div className="nav-actions">
+        <button
+          className="theme-toggle"
+          onClick={onToggleTheme}
+          aria-label="Toggle theme"
+          title="Switch theme"
+        >
+          {theme === "light" ? "🌙" : "☀️"}
+        </button>
+
+        <a href="/Srija_Resume.pdf" className="resume-btn" download>
+          ↓ Resume
+        </a>
+      </div>
     </nav>
   );
 }
+
 
 // HOME
 function Home() {
@@ -84,11 +97,12 @@ function Home() {
       </div>
 
       <div className="home-image">
-        <div className="image-circle">
-          &lt;/&gt;
-        </div>
-        <p>Building ideas into reality.</p>
-      </div>
+  <img
+    src="/coding-girl.png"
+    alt="Girl sitting at a desk and coding on her computer"
+    className="coding-girl"
+  />
+</div>
     </section>
   );
 }
@@ -459,10 +473,26 @@ function Contact() {
 }
 
 // MAIN APP
+
 function App() {
+  const [theme, setTheme] = React.useState(
+    localStorage.getItem("portfolio-theme") || "light"
+  );
+
+  React.useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) =>
+      prevTheme === "light" ? "dark" : "light"
+    );
+  };
+
   return (
     <>
-      <Navbar />
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
       <Home />
       <About />
       <Skills />
