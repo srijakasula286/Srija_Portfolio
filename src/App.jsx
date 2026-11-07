@@ -52,7 +52,7 @@ function Home() {
       <div className="home-content">
         <p className="greeting">HELLO, I'M</p>
 
-        <h1>Srijaa Kasula</h1>
+        <h1>Srija Kasula</h1>
 
         <h2>Aspiring Software Developer</h2>
 
@@ -125,7 +125,7 @@ function About() {
         </div>
 
         <div className="about-content">
-          <h3>Hello! I'm Srijaa Kasula.</h3>
+          <h3>Hello! I'm Srija Kasula.</h3>
 
           <p>
             I'm a Computer Science Engineering student
@@ -147,7 +147,7 @@ function About() {
 
           <div className="about-stats">
             <div>
-              <h2>8.5</h2>
+              <h2>9.5</h2>
               <p>CGPA</p>
             </div>
 
