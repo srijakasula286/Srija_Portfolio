@@ -147,7 +147,7 @@ function About() {
 
           <div className="about-stats">
             <div>
-              <h2>9.5</h2>
+              <h2>8.5</h2>
               <p>CGPA</p>
             </div>
 
