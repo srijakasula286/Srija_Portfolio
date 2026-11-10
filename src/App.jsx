@@ -431,7 +431,7 @@ function Contact() {
           <h3>Send Me a Message</h3>
 
           <form
-            action="https://formsubmit.co/YOUR_EMAIL@gmail.com"
+            action="https://formsubmit.co/srijakasula.06@gmail.com"
             method="POST"
           >
             <input
